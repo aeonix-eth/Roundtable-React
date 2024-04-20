@@ -1,12 +1,18 @@
-import React from 'react';
 import './App.css'
 import { Routes, Route, Outlet, Link } from "react-router-dom";
 import { ConnectButton } from "@rainbow-me/rainbowkit";
+import ResponsiveAppBar from "./pages/nav";
+import Home from "./pages/Home";
+import Airdrop from "./pages/Airdrop";
+import Dashboard from "./pages/Dashboard";
+import Leaderboard from "./pages/Leaderboard";
+import Opportunities from "./pages/Opportunities";
 
 
 export default function App() {
   return (
     <div>
+      <ResponsiveAppBar />
       <h1>Basic Example</h1>
 
       <p>
@@ -21,10 +27,11 @@ export default function App() {
             parent route paths, and nested route elements render inside
             parent route elements. See the note about <Outlet> below. */}
       <Routes>
-        <Route path="/" element={<Layout />}>
-          <Route index element={<Home />} />
-          <Route path="about" element={<About />} />
-          <Route path="dashboard" element={<Dashboard />} />
+          <Route path="Home" element={<Home />}>
+          <Route path="Dashboard" element={<Dashboard />} />
+          <Route path="Opportunities" element={<Opportunities />} />
+          <Route path="Leaderboard" element={<Leaderboard />} />
+          <Route path="Airdrop" element={<Airdrop />} />
 
           {/* Using path="*"" means "match anything", so this route
                 acts like a catch-all for URLs that we don't have explicit
@@ -32,15 +39,7 @@ export default function App() {
           <Route path="*" element={<NoMatch />} />
         </Route>
       </Routes>
-      <div
-      style={{
-        display: 'flex',
-        justifyContent: 'flex-end',
-        padding: 12,
-      }}
-       >
-      <ConnectButton />
-    </div>
+     
     </div>
   );
 }
@@ -50,19 +49,34 @@ function Layout() {
     <div>
       {/* A "layout route" is a good place to put markup you want to
           share across all the pages on your site, like navigation. */}
+            
       <nav>
         <ul>
           <li>
             <Link to="/">Home</Link>
           </li>
           <li>
-            <Link to="/about">About</Link>
-          </li>
-          <li>
             <Link to="/dashboard">Dashboard</Link>
           </li>
           <li>
-            <Link to="/nothing-here">Nothing Here</Link>
+            <Link to="/opportunities">Opportunities</Link>
+          </li>
+          <li>
+            <Link to="/leaderboard">Leaderboard</Link>
+          </li>
+          <li>
+            <Link to="/aidrop">Airdrop</Link>
+          </li>
+          <li>
+          <div
+      style={{
+        display: 'flex',
+        justifyContent: 'flex-end',
+        padding: 12,
+      }}
+       >
+      <ConnectButton />
+    </div>
           </li>
         </ul>
       </nav>
@@ -77,29 +91,6 @@ function Layout() {
   );
 }
 
-function Home() {
-  return (
-    <div>
-      <h2>Home</h2>
-    </div>
-  );
-}
-
-function About() {
-  return (
-    <div>
-      <h2>About</h2>
-    </div>
-  );
-}
-
-function Dashboard() {
-  return (
-    <div>
-      <h2>Dashboard</h2>
-    </div>
-  );
-}
 
 function NoMatch() {
   return (
