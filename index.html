@@ -7,7 +7,14 @@
     <title>Roundtable</title>
   </head>
   <body>
+    <div id="splash" class="splash"><div class="join stakeFont" onclick="join()"><span class="stakeEnter">STAKE</span><br class="shortBreak"><span class="stakeEnter" style="font-size:24px;">YOUR</span><br class="shortBreak"><span class="stakeEnter">SEAT</span></div></div>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
+    <script>
+      function join() {
+        var x = document.getElementById("splash");
+        x.style.display = "none";
+      } 
+    </script>
   </body>
 </html>

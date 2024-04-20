@@ -13,8 +13,9 @@ import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
 import {Link} from 'react-router-dom';
+import { ConnectButton } from "@rainbow-me/rainbowkit";
 
-const pages = ['Home', 'Dashboard', 'Opportunities', 'Leaderboard'];
+const pages = ['Dashboard', 'Opportunities', 'Leaderboard', 'Airdrop'];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 function ResponsiveAppBar() {
@@ -40,7 +41,17 @@ function ResponsiveAppBar() {
     <AppBar position="static">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
+        <Box
+            component="img"
+            sx={{
+              height: 36,
+              width: 36,
+              maxHeight: { xs: 36, md: 36 },
+              maxWidth: { xs: 36, md: 36 },
+            }}
+            alt="Logo"
+            src="img/logo.png"
+          />
           <Typography
             variant="h6"
             noWrap
@@ -56,9 +67,8 @@ function ResponsiveAppBar() {
               textDecoration: 'none',
             }}
           >
-            LOGO
+            &nbsp;Roundtable
           </Typography>
-
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
             <IconButton
               size="large"
@@ -101,6 +111,7 @@ function ResponsiveAppBar() {
               ))}
             </Menu>
           </Box>
+          
           <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
           <Typography
             variant="h5"
@@ -129,19 +140,21 @@ function ResponsiveAppBar() {
               >
                 <Link 
                 style={{color: "white"}} 
-                to={`/${page}`}>
-                        {page}
-                    </Link>
+                to={`/${page}`}
+                >
+                    {page}
+                </Link>
               </Button>
             ))}
           </Box>
 
           <Box sx={{ flexGrow: 0 }}>
-            <Tooltip title="Open settings">
+          <ConnectButton />
+            {/* <Tooltip title="Open settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
                 <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
               </IconButton>
-            </Tooltip>
+            </Tooltip>  */}
             <Menu
               sx={{ mt: '45px' }}
               id="menu-appbar"

@@ -1,3 +1,14 @@
+@font-face {
+  font-family: 'stakeFont';
+  font-style: normal;
+  font-weight: normal;
+  src: url('fonts/Hogwarts.woff') format('woff');
+}
+
+.stakeFont {
+  font-family: "stakeFont";
+}
+
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -27,7 +38,7 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
-  background: url('/img/rountablebg.jpg') no-repeat center center fixed; 
+  background-color: #92d7ef; 
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -37,6 +48,7 @@ body {
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
+  color:#FFF;
 }
 
 button {
@@ -69,4 +81,41 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
+}
+
+.splash{
+    width:100%;
+    height: 100%;
+    position: fixed;
+    z-index: 99999;
+    top: 0;
+    left: 0;
+    background-color:#000;
+    background: url('/img/rountablebg.jpg') no-repeat;
+    background-size: cover;
+    background-position: center center;
+    overflow-x: hidden;
+}
+
+.join{
+  z-index:999999;
+  text-align:center;
+  font-size:48px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  cursor:pointer;
+}
+
+.stakeEnter{
+/*background: linear-gradient(to bottom, #cfc09f 27%, #ffecb3 40%, #3a2c0f 78%); 
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;*/
+color: #fff;
+}
+
+.shortBreak{
+  line-height:10px;
 }

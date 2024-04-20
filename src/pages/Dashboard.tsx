@@ -1,4 +1,6 @@
 import React from "react";
+import {Link} from 'react-router-dom';
+
  
 const Dashboard = () => {
     return (
@@ -9,7 +11,11 @@ const Dashboard = () => {
             <h1 className="color-white">
                 Opportunities to explore
             </h1>
+            <h1>
+                <Link to="../Airdrop">Airdrop</Link>
+            </h1>
         </div></>
+       
     );
 };
  

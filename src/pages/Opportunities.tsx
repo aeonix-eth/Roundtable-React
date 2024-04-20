@@ -4,7 +4,7 @@ const Opportunities = () => {
     return (
         <><br></br><br></br><div>
             <h1 className="white">
-                Hoooooooome
+                Oppppppaaaa
             </h1>
         </div></>
     );
