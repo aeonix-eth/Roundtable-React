@@ -1,4 +1,8 @@
+import React from 'react';
+import './App.css'
 import { Routes, Route, Outlet, Link } from "react-router-dom";
+import { ConnectButton } from "@rainbow-me/rainbowkit";
+
 
 export default function App() {
   return (
@@ -28,6 +32,15 @@ export default function App() {
           <Route path="*" element={<NoMatch />} />
         </Route>
       </Routes>
+      <div
+      style={{
+        display: 'flex',
+        justifyContent: 'flex-end',
+        padding: 12,
+      }}
+       >
+      <ConnectButton />
+    </div>
     </div>
   );
 }
